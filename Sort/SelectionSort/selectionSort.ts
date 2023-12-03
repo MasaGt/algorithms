@@ -22,6 +22,6 @@ const sort = (data: number[]): number[] => {
         data[minIndex] = temp;
     }
     return data;
-}
+};
 
 console.log(sort([10, 1, 8, 7, 26, 55]));

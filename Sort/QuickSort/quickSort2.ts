@@ -5,7 +5,7 @@
  * @param end 配列の操作範囲の末尾のインデックス
  * @returns 
  */
-function quickSort(
+export function quickSort(
                     data: number[],
                     start: number,
                     end: number

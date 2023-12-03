@@ -1,0 +1,6 @@
+package.json
+package-lock.json
+*.md     
+jest.config.js
+tsconfig.json
+.gitignore

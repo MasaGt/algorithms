@@ -17,6 +17,9 @@
     ],
     "rules": {
         "semi": 1, // warns if there is no ; at the end of a line
-        "singleQuote": 1 // wanrs if use "" instead of ''
+        "singleQuote": 0,
+        "no-extra-semi": 0,
+        "no-constant-condition": 0,
+        "prefer-const": 0
     }
 }

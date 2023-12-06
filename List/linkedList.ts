@@ -98,12 +98,11 @@ class LinkedList<T> {
     return currentNode?.value;
   }
 
+  /**
+   *
+   * @returns Value at the head. Otherwise, undefined.
+   */
   getFirst(): T | undefined {
-    // range check
-    if (this.isEmpty()) {
-      return undefined;
-    }
-
     return this.head?.value;
   }
 

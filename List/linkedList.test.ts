@@ -37,10 +37,16 @@ describe("get tests", () => {
     expect(5).toBe(nonEmptyNumList.get(1));
   });
   test("get form empty list", () => {
-    expect(undefined).toBe(emptyStrList.get(1));
+    expect(emptyStrList.get(1)).toBeUndefined();
   });
-  test("getFirst", () => {
+  test("getFirst from non-empty list", () => {
     expect(1).toBe(nonEmptyNumList.getFirst());
+  });
+  test("getLast from non-empty list", () => {
+    expect(10).toBe(nonEmptyNumList.getLast());
+  });
+  test("getLast from empty list", () => {
+    expect(emptyStrList.getLast()).toBeUndefined();
   });
 });
 

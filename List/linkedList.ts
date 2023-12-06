@@ -107,6 +107,14 @@ class LinkedList<T> {
     return this.head?.value;
   }
 
+  /**
+   *
+   * @returns Value of the tail node. Otherwise, undefined.
+   */
+  getLast(): T | undefined {
+    return this.tail?.value;
+  }
+
   toString(): string {
     let contents: string = "";
 

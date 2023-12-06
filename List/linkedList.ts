@@ -30,13 +30,8 @@ class LinkedList<T> {
       this.addFirst(value);
     } else {
       //add node to the tail
-      const newNode = new ListNode<T>(value);
-      if (this.tail) {
-        this.tail.next = newNode;
-        this.tail = newNode;
-      }
+      this.addLast(value);
     }
-    this.size++;
   }
 
   /**
@@ -55,7 +50,24 @@ class LinkedList<T> {
         this.head.next = prevNode;
       }
     }
+    this.size++;
+  }
 
+  /**
+   * insert a node to the tail
+   * @param value
+   */
+  addLast(value: T): void {
+    if (this.isEmpty()) {
+      //populate first node
+      this.populateFirstNode(value);
+    } else {
+      const newNode = new ListNode<T>(value);
+      if (this.tail) {
+        this.tail.next = newNode;
+        this.tail = newNode;
+      }
+    }
     this.size++;
   }
 
@@ -78,8 +90,11 @@ class LinkedList<T> {
       }
       currentNode = currentNode.next;
     }
-
     return contents;
+  }
+
+  isEmpty(): Boolean {
+    return this.size === 0;
   }
 }
 

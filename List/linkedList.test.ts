@@ -26,4 +26,17 @@ describe("LinkedList insertion test", () => {
     nonEmptyNumList.addFirst(100);
     expect("100, 1, 5, 10").toBe(nonEmptyNumList.toString());
   });
+  test("addLast", () => {
+    nonEmptyNumList.addLast(0);
+    expect("1, 5, 10, 0").toBe(nonEmptyNumList.toString());
+  });
+});
+
+describe("isEmpty test", () => {
+  test("empty list", () => {
+    expect(emptyStrList.isEmpty()).toBeTruthy();
+  });
+  test("non empty list", () => {
+    expect(nonEmptyNumList.isEmpty()).toBeFalsy();
+  });
 });

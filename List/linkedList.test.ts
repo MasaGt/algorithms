@@ -39,6 +39,9 @@ describe("get tests", () => {
   test("get form empty list", () => {
     expect(undefined).toBe(emptyStrList.get(1));
   });
+  test("getFirst", () => {
+    expect(1).toBe(nonEmptyNumList.getFirst());
+  });
 });
 
 describe("isEmpty test", () => {

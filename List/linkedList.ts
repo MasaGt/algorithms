@@ -98,6 +98,15 @@ class LinkedList<T> {
     return currentNode?.value;
   }
 
+  getFirst(): T | undefined {
+    // range check
+    if (this.isEmpty()) {
+      return undefined;
+    }
+
+    return this.head?.value;
+  }
+
   toString(): string {
     let contents: string = "";
 

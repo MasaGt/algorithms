@@ -27,8 +27,7 @@ class LinkedList<T> {
   add(value: T): void {
     if (this.head == undefined) {
       //add node to the head
-      this.head = new ListNode<T>(value);
-      this.tail = this.head;
+      this.addFirst(value);
     } else {
       //add node to the tail
       const newNode = new ListNode<T>(value);
@@ -38,6 +37,31 @@ class LinkedList<T> {
       }
     }
     this.size++;
+  }
+
+  /**
+   * insert a node to the head
+   * @param value
+   */
+  addFirst(value: T): void {
+    if (this.head === undefined && this.tail === undefined) {
+      //populate first node
+      this.populateFirstNode(value);
+    } else {
+      const newNode = new ListNode<T>(value);
+      const prevNode = this.head;
+      this.head = newNode;
+      if (prevNode) {
+        this.head.next = prevNode;
+      }
+    }
+
+    this.size++;
+  }
+
+  populateFirstNode(value: T): void {
+    this.head = new ListNode<T>(value);
+    this.tail = this.head;
   }
 
   toString(): string {

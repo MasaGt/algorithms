@@ -22,4 +22,8 @@ describe("LinkedList insertion test", () => {
     emptyStrList.add("1");
     expect("1").toBe(emptyStrList.toString());
   });
+  test("addFirst", () => {
+    nonEmptyNumList.addFirst(100);
+    expect("100, 1, 5, 10").toBe(nonEmptyNumList.toString());
+  });
 });

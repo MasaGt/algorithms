@@ -108,6 +108,22 @@ class LinkedList<T> {
 
   /**
    *
+   * @param value
+   * @returns true if a list contains the specified value. Otherwise, false.
+   */
+  contains(value: T): boolean {
+    let currentNode = this.head;
+    while (currentNode) {
+      if (currentNode.value === value) {
+        return true;
+      }
+      currentNode = currentNode.next;
+    }
+    return false;
+  }
+
+  /**
+   *
    * @returns Value of the tail node. Otherwise, undefined.
    */
   getLast(): T | undefined {

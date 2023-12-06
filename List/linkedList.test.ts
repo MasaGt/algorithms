@@ -58,3 +58,12 @@ describe("isEmpty test", () => {
     expect(nonEmptyNumList.isEmpty()).toBeFalsy();
   });
 });
+
+describe("contains test", () => {
+  test("specified existing value", () => {
+    expect(nonEmptyNumList.contains(1)).toBeTruthy();
+  });
+  test("specfied non existing value", () => {
+    expect(nonEmptyNumList.contains(0)).toBeFalsy();
+  });
+});

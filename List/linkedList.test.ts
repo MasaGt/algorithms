@@ -32,6 +32,15 @@ describe("LinkedList insertion test", () => {
   });
 });
 
+describe("get tests", () => {
+  test("get form non empty list", () => {
+    expect(5).toBe(nonEmptyNumList.get(1));
+  });
+  test("get form empty list", () => {
+    expect(undefined).toBe(emptyStrList.get(1));
+  });
+});
+
 describe("isEmpty test", () => {
   test("empty list", () => {
     expect(emptyStrList.isEmpty()).toBeTruthy();

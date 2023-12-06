@@ -71,9 +71,31 @@ class LinkedList<T> {
     this.size++;
   }
 
+  /**
+   *
+   * @param value
+   */
   populateFirstNode(value: T): void {
     this.head = new ListNode<T>(value);
     this.tail = this.head;
+  }
+
+  /**
+   *
+   * @param index
+   * @returns value at the specified index otherwise undefined
+   */
+  get(index: number): T | undefined {
+    // range check
+    if (this.isEmpty() || index < 0 || index > this.size) {
+      return undefined;
+    }
+
+    let currentNode = this.head;
+    for (let i = 0; i < index; i++) {
+      currentNode = currentNode?.next;
+    }
+    return currentNode?.value;
   }
 
   toString(): string {

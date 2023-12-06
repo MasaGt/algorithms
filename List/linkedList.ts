@@ -39,7 +39,7 @@ class LinkedList<T> {
    * @param value
    */
   addFirst(value: T): void {
-    if (this.head === undefined && this.tail === undefined) {
+    if (this.isEmpty()) {
       //populate first node
       this.populateFirstNode(value);
     } else {
@@ -131,7 +131,7 @@ class LinkedList<T> {
     return contents;
   }
 
-  isEmpty(): Boolean {
+  isEmpty(): boolean {
     return this.size === 0;
   }
 }

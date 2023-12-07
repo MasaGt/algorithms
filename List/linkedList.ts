@@ -75,7 +75,7 @@ class LinkedList<T> {
    *
    * @param value
    */
-  populateFirstNode(value: T): void {
+  private populateFirstNode(value: T): void {
     this.head = new ListNode<T>(value);
     this.tail = this.head;
   }

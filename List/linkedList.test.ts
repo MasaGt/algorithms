@@ -88,3 +88,20 @@ describe("clear tests", () => {
     expect("").toBe(nonEmptyNumList.toString());
   });
 });
+
+describe("operations", () => {
+  test("operations to empty list", () => {
+    emptyStrList.add("Hello");
+    emptyStrList.add("World");
+    emptyStrList.addFirst("Test");
+    emptyStrList.addLast("!");
+
+    // anti-pattern Assertion Roulette
+    expect("World").toBe(emptyStrList.get(2));
+    expect("Test").toBe(emptyStrList.getFirst());
+    expect("!").toBe(emptyStrList.getLast());
+
+    const result = emptyStrList.remove(2);
+    expect("World").toBe(result);
+  });
+});

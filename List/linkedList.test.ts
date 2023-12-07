@@ -81,3 +81,10 @@ describe("remove tests", () => {
     }).toThrow(RangeError);
   });
 });
+
+describe("clear tests", () => {
+  test("clear from non-empty list", () => {
+    nonEmptyNumList.clear();
+    expect("").toBe(nonEmptyNumList.toString());
+  });
+});

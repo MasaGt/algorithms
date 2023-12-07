@@ -169,6 +169,15 @@ class LinkedList<T> {
   }
 
   /**
+   * remove all the nodes from this list
+   */
+  clear(): void {
+    while (!this.isEmpty()) {
+      this.remove(0);
+    }
+  }
+
+  /**
    *
    * @returns Value of the tail node. Otherwise, undefined.
    */

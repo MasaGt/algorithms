@@ -67,3 +67,17 @@ describe("contains test", () => {
     expect(nonEmptyNumList.contains(0)).toBeFalsy();
   });
 });
+
+describe("remove tests", () => {
+  test("remove from non-empty list", () => {
+    const result = nonEmptyNumList.remove(1);
+    expect(5).toBe(result);
+    expect("1, 10").toBe(nonEmptyNumList.toString());
+  });
+  test("remove from empty list", () => {
+    // check if RangeError is thrown
+    expect(() => {
+      emptyStrList.remove(0);
+    }).toThrow(RangeError);
+  });
+});

@@ -123,6 +123,52 @@ class LinkedList<T> {
   }
 
   /**
+   * remove node at the specified index
+   * @param index
+   * @returns removed value
+   * @throws RangeError
+   */
+  remove(index: number): T {
+    if (this.isEmpty() || index > this.size || index < 0) {
+      throw new RangeError("index is out of bounds");
+    }
+
+    //find node at the specified index
+    let currentNode = this.head;
+    let returnValue: T;
+    if (index === 0) {
+      //remove head node
+      if (!currentNode) {
+        throw new RangeError("index is out of bounds");
+      } else {
+        this.head = currentNode.next;
+        returnValue = currentNode.value;
+      }
+    } else {
+      let prevNode;
+      for (let i = 0; i < index; i++) {
+        prevNode = currentNode;
+        currentNode = currentNode?.next;
+      }
+
+      if (!currentNode || !prevNode) {
+        throw new RangeError("index is out of bounds");
+      } else {
+        prevNode.next = currentNode.next;
+        returnValue = currentNode.value;
+      }
+    }
+
+    //remove current node
+    if (currentNode) {
+      delete currentNode.next;
+      currentNode = undefined;
+    }
+    this.size--;
+    return returnValue;
+  }
+
+  /**
    *
    * @returns Value of the tail node. Otherwise, undefined.
    */
@@ -176,7 +222,7 @@ class ListNode<T> {
     return this._next;
   }
 
-  set next(next: ListNode<T>) {
+  set next(next: ListNode<T> | undefined) {
     this._next = next;
   }
 }

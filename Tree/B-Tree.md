@@ -8,6 +8,8 @@
 
 - DBのインデックスなんかに使われたりする
 
+[これでわかる(?) B-treeアルゴリズム](https://speakerdeck.com/nekonenene/b-tree-algorithm?slide=47)
+
 ---
 
 ### 具体的なデータ構造の説明
@@ -92,4 +94,8 @@ Step11: ノードが溢れるので、そのノードの中央の要素を親ノ
 
 Step12: 今度は親ノードが溢れるので、そのノードの中央の要素を親ノードに移す。また、そのノードの他の要素を子ノードに格納し直す。
 <img src="../img/b-tree12.png" />
+
+<br>
+
+[実際にB-Tree操作を確認しながら操作できるサイト](https://www.cs.usfca.edu/~galles/visualization/BTree.html)
 
